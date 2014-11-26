@@ -1,0 +1,8 @@
+C:\Projects\TestFx\TestFxDriver\bin\Debug\TestFxDriver.exe.config
+C:\Projects\TestFx\TestFxDriver\bin\Debug\TestFxDriver.exe
+C:\Projects\TestFx\TestFxDriver\bin\Debug\TestFxDriver.pdb
+C:\Projects\TestFx\TestFxDriver\bin\Debug\TestFx.dll
+C:\Projects\TestFx\TestFxDriver\bin\Debug\TestFx.pdb
+C:\Projects\TestFx\TestFxDriver\obj\Debug\TestFxDriver.csprojResolveAssemblyReference.cache
+C:\Projects\TestFx\TestFxDriver\obj\Debug\TestFxDriver.exe
+C:\Projects\TestFx\TestFxDriver\obj\Debug\TestFxDriver.pdb
