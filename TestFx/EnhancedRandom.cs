@@ -48,7 +48,7 @@ namespace TestFx
         }
 
         public static DateTime RandomDate()
-        {
+        {  
             var date = new DateTime();
             date = date.AddYears(rnd.Next(1900, DateTime.Today.Year));
             date = date.AddMonths(rnd.Next(0, 12));
