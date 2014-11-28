@@ -47,6 +47,40 @@ namespace TestFx
             return string.Format("({0}) {1}-{2}{3}{4}{5}", rnd.Next(201, 1000), rnd.Next(200, 1000), rnd.Next(0, 10), rnd.Next(0, 10), rnd.Next(0, 10), rnd.Next(0, 10));            
         }
 
+        public static DateTime RandomDate()
+        {
+            var date = new DateTime();
+            date = date.AddYears(rnd.Next(1900, DateTime.Today.Year));
+            date = date.AddMonths(rnd.Next(0, 12));
+
+            switch (date.Month)
+            {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    date = date.AddDays(rnd.Next(0, 31));
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    date = date.AddDays(rnd.Next(0, 30));
+                    break;
+                case 2:
+                    date = date.AddDays(rnd.Next(0, 28)); // I don't care enough to do leap years.
+                    break;
+                default:
+                    throw new Exception();
+                    break;
+            }
+
+            return date;
+        }
+
         #region static constants
 
 
