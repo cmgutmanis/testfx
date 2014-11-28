@@ -2,3 +2,4 @@ C:\Projects\TestFx\TestFx\bin\Debug\TestFx.dll
 C:\Projects\TestFx\TestFx\bin\Debug\TestFx.pdb
 C:\Projects\TestFx\TestFx\obj\Debug\TestFx.dll
 C:\Projects\TestFx\TestFx\obj\Debug\TestFx.pdb
+C:\Projects\TestFx\TestFx\obj\Debug\TestFx.csprojResolveAssemblyReference.cache

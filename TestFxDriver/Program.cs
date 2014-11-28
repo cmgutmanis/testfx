@@ -14,7 +14,7 @@ namespace TestFxDriver
             Console.WriteLine(EnhancedRandom.RandomWords(50));
             for (var i = 0; i < 20; i++)
             {
-                Console.WriteLine(EnhancedRandom.RandomBool());
+                Console.WriteLine(EnhancedRandom.RandomPhoneNumber());
             }
             Console.ReadLine();
         }

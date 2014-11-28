@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,23 +9,47 @@ namespace TestFx
 {
     public static class EnhancedRandom
     {
+        public static Random rnd = new Random();
+
         public static bool RandomBool()
         {
-            var rnd = new Random();
-            var yuh = rnd.Next(0, 2);
-            return yuh == 1;
+            return rnd.Next(0, 2) == 1;            
         }
 
         public static string RandomWords(int count)
         {
             var sb = new StringBuilder();
-            var seed = new Random();
             for (var i = 0; i <= count; i++)
             {
-                sb.Append(Words[seed.Next(1, Words.Length)] + " ");
+                sb.Append(Words[rnd.Next(0, Words.Length)] + " ");
             }
             return sb.ToString();
         }
+
+        public static string RandomFullName()
+        {
+            var name = FirstNames[rnd.Next(0, FirstNames.Length)] + " " + LastNames[rnd.Next(0, LastNames.Length)];
+            return name;
+        }
+
+        public static string RandomFirstName()
+        {
+            return FirstNames[rnd.Next(0, FirstNames.Length)];
+        }
+
+        public static string RandomLastName()
+        {
+            return LastNames[rnd.Next(0, LastNames.Length)];
+        }
+
+        public static string RandomPhoneNumber()
+        {
+            return string.Format("({0}) {1}-{2}{3}{4}{5}", rnd.Next(201, 1000), rnd.Next(200, 1000), rnd.Next(0, 10), rnd.Next(0, 10), rnd.Next(0, 10), rnd.Next(0, 10));            
+        }
+
+        #region static constants
+
+
 
         private static string[] Words =
         {
@@ -36,9 +61,38 @@ namespace TestFx
             "squeegee", "trampoline", "utilitarianism", "visceral", "wallbanger", "xenophobia", "yolo", "zoroastrianism"
         };
 
+        private static string[] FirstNames =
+        {
+            "James", "John", "Robert", "Michael", "William", "David", "Richard", "Joseph", "Charles", "Thomas",
+            "Christopher", "Daniel", "Matthew", "Donald", "Anthony", "Paul", "Mark", "George", "Steven", "Kenneth",
+            "Andrew", "Edward", "Joshua", "Brian", "Kevin", "Ronald", "Timothy", "Jason", "Jeffrey", "Gary",
+            "Ryan", "Nicholas", "Eric", "Jacob", "Stephen", "Jonathan", "Larry", "Frank", "Scott", "Justin",
+            "Brandon", "Raymond", "Gregory", "Samuel", "Benjamin", "Patrick", "Jack", "Dennis", "Jerry", "Alexander",
+
+            "Mary", "Patricia", "Jennifer", "Elizabeth", "Linda", "Barbara", "Susan", "Margaret", "Jessica", "Dorothy",
+            "Sarah", "Karen", "Nancy", "Betty", "Lisa", "Sandra", "Helen", "Ashley", "Donna", "Kimberly",
+            "Carol", "Michelle", "Emily", "Amanda", "Melissa", "Deborah", "Laura", "Stephanie", "Rebecca", "Sharon",
+            "Cynthia", "Kathleen", "Ruth", "Anna", "Shirley", "Amy", "Angela", "Virginia", "Brenda", "Pamela",
+            "Catherine", "Katherine", "Nicole", "Christine", "Janet", "Debra", "Samantha", "Carolyn", "Rachel",
+            "Heather"
+        };
+
+        private static string[] LastNames =
+        {
+            "Smith", "Johnson", "Williams", "Brown", "Jones", "Miller", "Davis", "Garcia", "Rodriguez", "Wilson",
+            "Martinez", "Anderson", "Taylor", "Thomas", "Hernandez", "Moore", "Martin", "Jackson", "Thompson", "White", 
+            "Lopez", "Lee", "Gonzalez", "Harris", "Clark", "Lewis", "Robinson", "Walker", "Perez", "Hall",
+            "Young", "Allen", "Sanchez", "Wright", "King", "Scott", "Green", "Baker", "Adams", "Nelson",
+            "Hill", "Ramirez", "Campbell", "Mitchell", "Roberts", "Carter", "Phillips", "Evans", "Turner", "Torres"                                                                   
+        };
+
+        #endregion
+
     }
 
 }
+
+
 
 
 
